@@ -12,6 +12,7 @@
 		876600B21B9FC33200C38233 /* composer_close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B01B9FC33200C38233 /* composer_close.wav */; };
 		876600B31B9FC33200C38233 /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B11B9FC33200C38233 /* composer_open.wav */; };
 		876600B71B9FD9B800C38233 /* composer_select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B61B9FD9B800C38233 /* composer_select.wav */; };
+		876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876600B81B9FE6BC00C38233 /* Untitled.gif */; };
 		8776BDD41B9E7178007BC7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD31B9E7178007BC7C0 /* main.m */; };
 		8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD61B9E7178007BC7C0 /* AppDelegate.m */; };
 		8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD91B9E7178007BC7C0 /* ViewController.m */; };
@@ -42,6 +43,7 @@
 		876600B11B9FC33200C38233 /* composer_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_open.wav; sourceTree = "<group>"; };
 		876600B41B9FC70D00C38233 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		876600B61B9FD9B800C38233 /* composer_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_select.wav; sourceTree = "<group>"; };
+		876600B81B9FE6BC00C38233 /* Untitled.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Untitled.gif; path = ../Untitled.gif; sourceTree = "<group>"; };
 		8776BDCE1B9E7178007BC7C0 /* HyPopMenuView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyPopMenuView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDD21B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDD31B9E7178007BC7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		8776BDD11B9E7178007BC7C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				876600B81B9FE6BC00C38233 /* Untitled.gif */,
 				876600B01B9FC33200C38233 /* composer_close.wav */,
 				876600B11B9FC33200C38233 /* composer_open.wav */,
 				876600B61B9FD9B800C38233 /* composer_select.wav */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B705A91B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png in Resources */,
+				876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */,
 				876600B21B9FC33200C38233 /* composer_close.wav in Resources */,
 				876600B31B9FC33200C38233 /* composer_open.wav in Resources */,
 				8776BDDD1B9E7178007BC7C0 /* Main.storyboard in Resources */,
