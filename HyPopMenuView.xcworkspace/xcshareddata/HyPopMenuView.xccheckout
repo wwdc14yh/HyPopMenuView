@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F5C5F43C-2B51-4FCF-873C-7733B989DECF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HyPopMenuView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7CE8B3CE4FB9D17A335A1AEABABA063B3F9449A8</key>
+		<string>https://github.com/wwdc14/HyPopMenuView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HyPopMenuView.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7CE8B3CE4FB9D17A335A1AEABABA063B3F9449A8</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wwdc14/HyPopMenuView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7CE8B3CE4FB9D17A335A1AEABABA063B3F9449A8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7CE8B3CE4FB9D17A335A1AEABABA063B3F9449A8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HyPopMenuView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
