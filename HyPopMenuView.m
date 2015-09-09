@@ -135,7 +135,6 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
         [weak setAlpha:1];
         CancelButton.transform=CGAffineTransformMakeRotation((M_PI/2)/2);
     }];
-    
     NSInteger index = 0;
     for (MenuLabel *Obj in _ItmesArr) {
         CGFloat buttonX,buttonY;
@@ -147,8 +146,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
             _MaxTopViewY = CGRectGetMinY(toValue);
         }
         CustomButton *button = [self AllockButtonIndex:index];
-        [button setFrame:fromValue];
         button.MenuData = Obj;
+        [button setFrame:fromValue];
         double delayInSeconds = index * Interval;
         CFTimeInterval delay = delayInSeconds + CACurrentMediaTime();
         
@@ -379,6 +378,10 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 }
 
 -(void)dealloc{
+    NSArray *SubViews = [window subviews];
+    for (id obj in SubViews) {
+        [obj removeFromSuperview];
+    }
     [window resignKeyWindow];
     [window removeFromSuperview];
     window = nil;
@@ -437,7 +440,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     UIImage *image = [UIImage imageNamed:MenuData.iconName];
     [self setImage:image forState:UIControlStateNormal];
     [self setTitle:MenuData.title forState:UIControlStateNormal];
-    UIColor *color = [UIColor getPixelColorAtLocation:CGPointMake(100, 2) inImage:image];
+    UIColor *color = [UIColor getPixelColorAtLocation:CGPointMake(50, 20) inImage:image];
     [self setTitleColor:color forState:UIControlStateNormal];
 }
 
