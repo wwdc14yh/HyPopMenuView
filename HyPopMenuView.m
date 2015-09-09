@@ -9,7 +9,6 @@
 #import "MenuLabel.h"
 #import <pop/POP.h>
 #import "HyPopMenuView.h"
-#import "UIImage+ImageEffects.h"
 #import "UIColor+ImageGetColor.h"
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -38,6 +37,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     UIWindow *window;
     UIImage *bulrImage;
 }
+@property (nonatomic,weak) UIView *BlurView;
 @property (nonatomic,retain) NSArray *ItmesArr;
 @property (nonatomic,strong) SelectdCompletionBlock block;
 @property (nonatomic,assign) BOOL is;
@@ -46,44 +46,40 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 @implementation HyPopMenuView
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
                           TopView:(UIView *)topView
        OpenOrCloseAudioDictionary:(NSDictionary *)openOrCloseAudioDictionary
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
 
-    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items SuperView:superVie];
+    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items];
     [menu setOpenOrCloseAudioDictionary:openOrCloseAudioDictionary];
     [menu setTopView:topView];
     [menu SelectdCompletionBlock:block];
 }
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
                           TopView:(UIView *)topView
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
 
-    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items SuperView:superVie];
+    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items];
     [menu setTopView:topView];
     [menu SelectdCompletionBlock:block];
 }
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
-    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items SuperView:superVie];
+    HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items];
     [menu SelectdCompletionBlock:block];
 }
 
--(instancetype) initWithItmes:(NSArray *)Itmes SuperView:(UIView *)superView
+-(instancetype) initWithItmes:(NSArray *)Itmes
 {
     self = [super init];
     if (self) {
-        //[self setValue:@"ope" forKey:NSFontAttributeName];
-        NSLog(@"nsf---%@",kHyPopMenuViewCloseAudioNameKey);
         _is = true;
         _ItmesArr = Itmes;
         [self setFrame:CGRectMake(0, 0, kW, kH)];
-        [self setSuperView:superView];
+        [self initUI];
+        [self show];
         
     }
     return self;
@@ -91,19 +87,40 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 
 -(void)initUI
 {
+    UIView *BlurView;
+    double version = [[UIDevice currentDevice].systemVersion doubleValue];
+    if (version >= 8.0f) {
+        
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        BlurView = [[UIVisualEffectView alloc] initWithEffect:blur];
+        ((UIVisualEffectView *)BlurView).frame = self.bounds;
+        
+    }else if(version >= 7.0f){
+        
+        BlurView = [[UIToolbar alloc] initWithFrame:self.bounds];
+        ((UIToolbar *)BlurView).barStyle = UIBarStyleDefault;
+        
+    }else{
+        
+        BlurView = [[UIView alloc] initWithFrame:self.bounds];
+        [BlurView setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.9f]];
+    }
+    BlurView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin;
+    _BlurView = BlurView;
+    [self addSubview:_BlurView];
     self.alpha = 0.0f;
     UIView *DownView = [[UIView alloc] init];
     CGFloat DownY = kH - 52;
     [DownView setTag:10];
     [DownView setFrame:(CGRect){{0,DownY},{kW,52}}];
-    [DownView setBackgroundColor:[UIColor colorWithWhite:1.f alpha:0.96f]];
+    [DownView setBackgroundColor:[UIColor colorWithWhite:1.f alpha:0.90f]];
     
     CGFloat CANCELw = 28;
     ImageView *CancelButton = [[ImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(DownView.bounds)/2 - CANCELw/2, CGRectGetHeight(DownView.bounds)/2 - CANCELw/2, CANCELw, CANCELw)];
     [CancelButton setImage:[UIImage imageNamed:CancelStrImgaeName]];
     [CancelButton setTag:11];
     [DownView addSubview:CancelButton];
-    [self addSubview:DownView];
+    [_BlurView addSubview:DownView];
     [self CirculatingItmes];
 }
 
@@ -138,7 +155,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
         [self StartTheAnimationFromValue:fromValue ToValue:toValue Delay:delay Object:button CompletionBlock:^(BOOL CompletionBlock) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                         action:@selector(dismiss)];
-            [self addGestureRecognizer:tap];
+            [_BlurView addGestureRecognizer:tap];
         } HideDisplay:false];
         index ++;
     }
@@ -151,7 +168,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [button setAlpha:0.0f];
     [button setTitleColor:[UIColor colorWithWhite:0.38 alpha:1] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(selectd:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:button];
+    [_BlurView addSubview:button];
     return button;
 }
 
@@ -234,7 +251,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     if (![TopView isKindOfClass:[NSNull class]]) {
         _TopView = TopView;
         
-        [self addSubview:_TopView];
+        [_BlurView addSubview:_TopView];
     }
     
 }
@@ -326,19 +343,6 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     NSString *CloseAudioType = [_OpenOrCloseAudioDictionary objectForKey:kHyPopMenuViewCloseAudioTypeKey];
     NSString *CloseAudioName = [_OpenOrCloseAudioDictionary objectForKey:kHyPopMenuViewCloseAudioNameKey];
     [self playSoundName:CloseAudioName ForType:CloseAudioType];
-}
-
--(void)setSuperView:(UIView *)SuperView{
-    
-    NSAssert(SuperView != nil, @"SuperView is NULL");
-    NSLog(@"hee");
-    UIImage *image = [self GetImgaeSuperView:SuperView];
-    NSLog(@"end");
-    
-    bulrImage = [image applyExtraLightEffect];
-    
-    [self initUI];
-    [self show];
 }
 
 -(void)setOpenOrCloseAudioDictionary:(NSDictionary *)OpenOrCloseAudioDictionary{
@@ -433,7 +437,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     UIImage *image = [UIImage imageNamed:MenuData.iconName];
     [self setImage:image forState:UIControlStateNormal];
     [self setTitle:MenuData.title forState:UIControlStateNormal];
-    [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    UIColor *color = [UIColor getPixelColorAtLocation:CGPointMake(100, 2) inImage:image];
+    [self setTitleColor:color forState:UIControlStateNormal];
 }
 
 - (void)scaleToSmall

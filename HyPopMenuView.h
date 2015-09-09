@@ -27,36 +27,29 @@ UIKIT_EXTERN NSString *const kHyPopMenuViewSelectAudioTypeKey
 @property (nonatomic,retain)NSDictionary     *OpenOrCloseAudioDictionary; //音频文件字典     Audio File Dictionary
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
                           TopView:(UIView *)topView
        OpenOrCloseAudioDictionary:(NSDictionary *)openOrCloseAudioDictionary
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
                           TopView:(UIView *)topView
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
 +(void)CreatingPopMenuObjectItmes:(NSArray *)Items
-                        SuperView:(UIView *)superVie
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
 -(void)SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
--(instancetype) initWithItmes:(NSArray *)Itmes
-                    SuperView:(UIView *)superView;
-
-@end
-
-@interface  ImageView: UIImageView
+-(instancetype) initWithItmes:(NSArray *)Itmes;
 
 @end
 
 @interface CustomButton : UIButton
-
 @property (nonatomic, retain)MenuLabel *MenuData;
 
 -(void)SelectdAnimation;
 -(void)CancelAnimation;
+@end
 
+@interface  ImageView: UIImageView
 @end

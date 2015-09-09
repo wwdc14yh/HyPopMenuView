@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8A7E33F36864D399319208DE12FE7065.png" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-cT-5g7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3050.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-cT-5g7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-YH-eMX">
@@ -52,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8A7E33F36864D399319208DE12FE7065.png" width="1242" height="2208"/>
+        <image name="IMG_3050.PNG" width="1242" height="2208"/>
     </resources>
 </document>

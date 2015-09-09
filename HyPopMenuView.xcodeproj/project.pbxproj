@@ -13,6 +13,7 @@
 		876600B31B9FC33200C38233 /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B11B9FC33200C38233 /* composer_open.wav */; };
 		876600B71B9FD9B800C38233 /* composer_select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B61B9FD9B800C38233 /* composer_select.wav */; };
 		876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876600B81B9FE6BC00C38233 /* Untitled.gif */; };
+		876600BB1BA01BD600C38233 /* IMG_3050.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 876600BA1BA01BD600C38233 /* IMG_3050.PNG */; };
 		8776BDD41B9E7178007BC7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD31B9E7178007BC7C0 /* main.m */; };
 		8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD61B9E7178007BC7C0 /* AppDelegate.m */; };
 		8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD91B9E7178007BC7C0 /* ViewController.m */; };
@@ -21,9 +22,7 @@
 		8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8776BDE01B9E7178007BC7C0 /* LaunchScreen.xib */; };
 		8776BDEE1B9E7178007BC7C0 /* HyPopMenuViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */; };
 		8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */; };
-		8776BDFF1B9E75E9007BC7C0 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */; };
 		8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BE011B9E8519007BC7C0 /* MenuLabel.m */; };
-		87B705A91B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png in Resources */ = {isa = PBXBuildFile; fileRef = 87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +43,7 @@
 		876600B41B9FC70D00C38233 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		876600B61B9FD9B800C38233 /* composer_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_select.wav; sourceTree = "<group>"; };
 		876600B81B9FE6BC00C38233 /* Untitled.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Untitled.gif; path = ../Untitled.gif; sourceTree = "<group>"; };
+		876600BA1BA01BD600C38233 /* IMG_3050.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3050.PNG; sourceTree = "<group>"; };
 		8776BDCE1B9E7178007BC7C0 /* HyPopMenuView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyPopMenuView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDD21B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDD31B9E7178007BC7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,11 +59,8 @@
 		8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuViewTests.m; sourceTree = "<group>"; };
 		8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyPopMenuView.h; sourceTree = "<group>"; };
 		8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuView.m; sourceTree = "<group>"; };
-		8776BDFD1B9E75E9007BC7C0 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8776BE001B9E8519007BC7C0 /* MenuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLabel.h; sourceTree = "<group>"; };
 		8776BE011B9E8519007BC7C0 /* MenuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLabel.m; sourceTree = "<group>"; };
-		87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8A7E33F36864D399319208DE12FE7065.png; sourceTree = "<group>"; };
 		AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD4BEAFEAFA15C6A938C955D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +137,7 @@
 				876600B01B9FC33200C38233 /* composer_close.wav */,
 				876600B11B9FC33200C38233 /* composer_open.wav */,
 				876600B61B9FD9B800C38233 /* composer_select.wav */,
-				87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */,
+				876600BA1BA01BD600C38233 /* IMG_3050.PNG */,
 				8776BDD21B9E7178007BC7C0 /* Info.plist */,
 				8776BDD31B9E7178007BC7C0 /* main.m */,
 			);
@@ -167,8 +164,6 @@
 		8776BDF91B9E73EC007BC7C0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				8776BDFD1B9E75E9007BC7C0 /* UIImage+ImageEffects.h */,
-				8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */,
 				8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */,
 				8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */,
 				874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */,
@@ -270,10 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B705A91B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png in Resources */,
 				876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */,
 				876600B21B9FC33200C38233 /* composer_close.wav in Resources */,
 				876600B31B9FC33200C38233 /* composer_open.wav in Resources */,
+				876600BB1BA01BD600C38233 /* IMG_3050.PNG in Resources */,
 				8776BDDD1B9E7178007BC7C0 /* Main.storyboard in Resources */,
 				8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */,
 				8776BDDF1B9E7178007BC7C0 /* Images.xcassets in Resources */,
@@ -330,7 +325,6 @@
 			files = (
 				8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */,
 				8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */,
-				8776BDFF1B9E75E9007BC7C0 /* UIImage+ImageEffects.m in Sources */,
 				8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */,
 				8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */,
 				8776BDD41B9E7178007BC7C0 /* main.m in Sources */,

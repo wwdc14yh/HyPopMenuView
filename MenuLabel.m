@@ -12,19 +12,18 @@
 
 -(instancetype) initWithIconName:(NSString *)iconName
                            Title:(NSString *)title{
-
     self = [super init];
     if (self) {
         self.title = title;
         self.iconName = iconName;
     }
     return self;
-    
 }
 
 +(instancetype) CreatelabelIconName:(NSString *)iconName
                               Title:(NSString *)title{
-    MenuLabel *label = [[MenuLabel alloc] initWithIconName:iconName Title:title];
+    MenuLabel *label = [[MenuLabel alloc] initWithIconName:iconName
+                                                     Title:title];
     return label;
 }
 
