@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8A7E33F36864D399319208DE12FE7065.png" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-cT-5g7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-YH-eMX">
+                                <rect key="frame" x="128" y="512" width="64" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="xUp-O1-P0p"/>
+                                    <constraint firstAttribute="height" constant="56" id="z90-6P-wZ9"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowMenu:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ciH-1I-Ggs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vYf-cT-5g7" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="5UE-MF-RCa"/>
+                            <constraint firstAttribute="centerY" secondItem="vYf-cT-5g7" secondAttribute="centerY" id="72q-Ou-sM1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xzp-YH-eMX" secondAttribute="trailing" constant="112" id="LID-Ps-m1S"/>
+                            <constraint firstItem="vYf-cT-5g7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NrP-nH-edv"/>
+                            <constraint firstAttribute="centerX" secondItem="vYf-cT-5g7" secondAttribute="centerX" id="Zp5-HA-TL3"/>
+                            <constraint firstItem="xzp-YH-eMX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="112" id="mFW-1b-cbS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xzp-YH-eMX" secondAttribute="bottom" id="yaH-Ok-GYo"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="8A7E33F36864D399319208DE12FE7065.png" width="1242" height="2208"/>
+    </resources>
 </document>

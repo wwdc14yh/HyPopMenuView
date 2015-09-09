@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CBEDD30FEA89B560C66C5B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4BEAFEAFA15C6A938C955D /* libPods.a */; };
+		874A20B41B9F16F3000F591C /* UIColor+ImageGetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */; };
+		876600B21B9FC33200C38233 /* composer_close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B01B9FC33200C38233 /* composer_close.wav */; };
+		876600B31B9FC33200C38233 /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B11B9FC33200C38233 /* composer_open.wav */; };
+		876600B71B9FD9B800C38233 /* composer_select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B61B9FD9B800C38233 /* composer_select.wav */; };
 		8776BDD41B9E7178007BC7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD31B9E7178007BC7C0 /* main.m */; };
 		8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD61B9E7178007BC7C0 /* AppDelegate.m */; };
 		8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD91B9E7178007BC7C0 /* ViewController.m */; };
@@ -14,6 +19,10 @@
 		8776BDDF1B9E7178007BC7C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8776BDDE1B9E7178007BC7C0 /* Images.xcassets */; };
 		8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8776BDE01B9E7178007BC7C0 /* LaunchScreen.xib */; };
 		8776BDEE1B9E7178007BC7C0 /* HyPopMenuViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */; };
+		8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */; };
+		8776BDFF1B9E75E9007BC7C0 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */; };
+		8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BE011B9E8519007BC7C0 /* MenuLabel.m */; };
+		87B705A91B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png in Resources */ = {isa = PBXBuildFile; fileRef = 87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGetColor.h"; sourceTree = "<group>"; };
+		874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGetColor.m"; sourceTree = "<group>"; };
+		876600B01B9FC33200C38233 /* composer_close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_close.wav; sourceTree = "<group>"; };
+		876600B11B9FC33200C38233 /* composer_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_open.wav; sourceTree = "<group>"; };
+		876600B41B9FC70D00C38233 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		876600B61B9FD9B800C38233 /* composer_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_select.wav; sourceTree = "<group>"; };
 		8776BDCE1B9E7178007BC7C0 /* HyPopMenuView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyPopMenuView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDD21B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDD31B9E7178007BC7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +55,16 @@
 		8776BDE71B9E7178007BC7C0 /* HyPopMenuViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyPopMenuViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDEC1B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuViewTests.m; sourceTree = "<group>"; };
+		8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyPopMenuView.h; sourceTree = "<group>"; };
+		8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuView.m; sourceTree = "<group>"; };
+		8776BDFD1B9E75E9007BC7C0 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		8776BE001B9E8519007BC7C0 /* MenuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLabel.h; sourceTree = "<group>"; };
+		8776BE011B9E8519007BC7C0 /* MenuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLabel.m; sourceTree = "<group>"; };
+		87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8A7E33F36864D399319208DE12FE7065.png; sourceTree = "<group>"; };
+		AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FD4BEAFEAFA15C6A938C955D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBEDD30FEA89B560C66C5B9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A3D68633EDF08EC70A505C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */,
+				AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8776BDC51B9E7178007BC7C0 = {
 			isa = PBXGroup;
 			children = (
+				8776BDF91B9E73EC007BC7C0 /* Class */,
 				8776BDD01B9E7178007BC7C0 /* HyPopMenuView */,
 				8776BDEA1B9E7178007BC7C0 /* HyPopMenuViewTests */,
 				8776BDCF1B9E7178007BC7C0 /* Products */,
+				1A3D68633EDF08EC70A505C5 /* Pods */,
+				9AEC97720760A664D7F37052 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +134,10 @@
 		8776BDD11B9E7178007BC7C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				876600B01B9FC33200C38233 /* composer_close.wav */,
+				876600B11B9FC33200C38233 /* composer_open.wav */,
+				876600B61B9FD9B800C38233 /* composer_select.wav */,
+				87B705A81B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png */,
 				8776BDD21B9E7178007BC7C0 /* Info.plist */,
 				8776BDD31B9E7178007BC7C0 /* main.m */,
 			);
@@ -119,6 +161,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8776BDF91B9E73EC007BC7C0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				8776BDFD1B9E75E9007BC7C0 /* UIImage+ImageEffects.h */,
+				8776BDFE1B9E75E9007BC7C0 /* UIImage+ImageEffects.m */,
+				8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */,
+				8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */,
+				874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */,
+				874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */,
+				8776BE001B9E8519007BC7C0 /* MenuLabel.h */,
+				8776BE011B9E8519007BC7C0 /* MenuLabel.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		9AEC97720760A664D7F37052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				876600B41B9FC70D00C38233 /* AudioToolbox.framework */,
+				FD4BEAFEAFA15C6A938C955D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8776BDF11B9E7178007BC7C0 /* Build configuration list for PBXNativeTarget "HyPopMenuView" */;
 			buildPhases = (
+				5351D3925C20B5D3A15454A3 /* Check Pods Manifest.lock */,
 				8776BDCA1B9E7178007BC7C0 /* Sources */,
 				8776BDCB1B9E7178007BC7C0 /* Frameworks */,
 				8776BDCC1B9E7178007BC7C0 /* Resources */,
+				37E137B69D3037CBA1012390 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +267,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B705A91B9EE00D0018802F /* 8A7E33F36864D399319208DE12FE7065.png in Resources */,
+				876600B21B9FC33200C38233 /* composer_close.wav in Resources */,
+				876600B31B9FC33200C38233 /* composer_open.wav in Resources */,
 				8776BDDD1B9E7178007BC7C0 /* Main.storyboard in Resources */,
 				8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */,
 				8776BDDF1B9E7178007BC7C0 /* Images.xcassets in Resources */,
+				876600B71B9FD9B800C38233 /* composer_select.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +286,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37E137B69D3037CBA1012390 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5351D3925C20B5D3A15454A3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8776BDCA1B9E7178007BC7C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */,
+				8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */,
+				8776BDFF1B9E75E9007BC7C0 /* UIImage+ImageEffects.m in Sources */,
 				8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */,
+				8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */,
 				8776BDD41B9E7178007BC7C0 /* main.m in Sources */,
+				874A20B41B9F16F3000F591C /* UIColor+ImageGetColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +454,7 @@
 		};
 		8776BDF21B9E7178007BC7C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HyPopMenuView/Info.plist;
@@ -355,6 +465,7 @@
 		};
 		8776BDF31B9E7178007BC7C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HyPopMenuView/Info.plist;
@@ -416,6 +527,7 @@
 				8776BDF31B9E7178007BC7C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8776BDF41B9E7178007BC7C0 /* Build configuration list for PBXNativeTarget "HyPopMenuViewTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +536,7 @@
 				8776BDF61B9E7178007BC7C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
