@@ -1,12 +1,10 @@
-# HyPopMenuView
-=
+# Effect Diagram GIF
 ![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled.gif)
 HyPopMenuView
 
 ### Manually Import【手动导入】
 【将`HyPopMenuView`,`UIColor+ImageGetColor`,`MenuLabel`所有源代码拽入项目中】
 【导入主头文件：`#import "HyPopMenuView.h"`】
-
 ```objc
 HyPopMenuView.h         HyPopMenuView.m
 UIColor+ImageGetColor.h UIColor+ImageGetColor.m
@@ -56,4 +54,4 @@ NSArray *Objs = @[
 * 如果在使用过程中遇到BUG，希望你能Issues我
 * 将模仿进行到底,让更多新手开发者了解比较酷的界面实现思路... 
 * 如果觉得好用请Star!
-* 谢 谢!
+* 谢谢!
