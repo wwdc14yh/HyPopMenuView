@@ -1,6 +1,5 @@
 # Effect Diagram GIF
 ![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled.gif)
-HyPopMenuView
 
 ### Manually Import【手动导入】
 【将`HyPopMenuView`,`UIColor+ImageGetColor`,`MenuLabel`所有源代码拽入项目中】
