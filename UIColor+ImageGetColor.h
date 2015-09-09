@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OpenGLES/ES1/glext.h>
+
+@interface UIView (GetImgae)
+
+-(UIImage *)imageRepresentation;
+
+@end
 
 @interface UIColor (ImageGetColor)
 

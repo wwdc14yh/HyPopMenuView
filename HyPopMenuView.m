@@ -144,8 +144,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     }
 }
 
--(CustomButton *)AllockButtonIndex:(NSInteger)index{
-
+-(CustomButton *)AllockButtonIndex:(NSInteger)index
+{
     CustomButton *button = [[CustomButton alloc] init];
     [button setTag:(index + 1) + ButtonTag];
     [button setAlpha:0.0f];
@@ -331,10 +331,14 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 -(void)setSuperView:(UIView *)SuperView{
     
     NSAssert(SuperView != nil, @"SuperView is NULL");
+    NSLog(@"hee");
     UIImage *image = [self GetImgaeSuperView:SuperView];
+    NSLog(@"end");
+    
     bulrImage = [image applyExtraLightEffect];
-    [self show];
+    
     [self initUI];
+    [self show];
 }
 
 -(void)setOpenOrCloseAudioDictionary:(NSDictionary *)OpenOrCloseAudioDictionary{
@@ -387,8 +391,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 }
 
 -(UIImage *)GetImgaeSuperView:(UIView *)superView{
-
-    UIGraphicsBeginImageContextWithOptions(superView.bounds.size, YES, 0.5f);
+    
+    UIGraphicsBeginImageContextWithOptions(superView.bounds.size, YES, 0.1f);
     [superView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *uiImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

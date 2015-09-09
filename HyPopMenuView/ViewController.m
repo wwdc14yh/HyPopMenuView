@@ -20,6 +20,7 @@
     [super viewDidLoad];
     NSArray *windows = [UIApplication sharedApplication].windows;
     NSLog(@"windows.count:%ld",windows.count);
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)ShowMenu:(UIButton *)sender {
