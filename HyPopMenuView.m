@@ -404,60 +404,6 @@ CompletionBlock:(void(^)(BOOL completion))blcok
 
 @end
 
-@interface HyGlowLabel : UILabel
-{
-    CGColorSpaceRef colorSpaceRef;
-    CGColorRef glowColorRef;
-}
-@property (nonatomic, assign) CGSize glowOffset;
-@property (nonatomic, assign) CGFloat glowAmount;
-@property (nonatomic, retain) UIColor *glowColor;
-@end
-
-@implementation HyGlowLabel
-
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if(self != nil) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (void)initialize {
-    colorSpaceRef = CGColorSpaceCreateDeviceRGB();
-    
-    self.glowOffset = CGSizeMake(0.0, 0.0);
-    self.glowAmount = 0.0;
-    self.glowColor = [UIColor clearColor];
-}
-
-- (void)awakeFromNib {
-    [self initialize];
-}
-
--(void)setGlowColor:(UIColor *)glowColor{
-
-    _glowColor = glowColor;
-    glowColorRef = CGColorCreate(colorSpaceRef, CGColorGetComponents(glowColor.CGColor));
-    
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
-    
-    CGContextSetShadow(context, self.glowOffset, self.glowAmount);
-    CGContextSetShadowWithColor(context, self.glowOffset, self.glowAmount, glowColorRef);
-    
-    [super drawTextInRect:rect];
-    
-    CGContextRestoreGState(context);
-}
-
-@end
-
 @interface CustomButton ()
 
 @end
