@@ -171,7 +171,11 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     return button;
 }
 
--(void)StartTheAnimationFromValue:(CGRect)fromValue ToValue:(CGRect)toValue Delay:(CFTimeInterval)delay Object:(id)obj CompletionBlock:(void(^) (BOOL CompletionBlock))completionBlock HideDisplay:(BOOL)HideDisplay{
+-(void)StartTheAnimationFromValue:(CGRect)fromValue
+                          ToValue:(CGRect)toValue
+                            Delay:(CFTimeInterval)delay
+                           Object:(id)obj
+                  CompletionBlock:(void(^) (BOOL CompletionBlock))completionBlock HideDisplay:(BOOL)HideDisplay{
 
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
     springAnimation.removedOnCompletion = YES;
@@ -249,7 +253,6 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 
     if (![TopView isKindOfClass:[NSNull class]]) {
         _TopView = TopView;
-        
         [_BlurView addSubview:_TopView];
     }
     
@@ -282,7 +285,6 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     isname = [Keys containsObject:kHyPopMenuViewSelectAudioNameKey];
     
     BOOL istype = false;
-    
     NSString *SelectAudioName,*SelectAudioType;
     istype = [Keys containsObject:kHyPopMenuViewSelectAudioTypeKey];
     if (isname && istype) {
@@ -295,7 +297,9 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [self playSoundName:SelectAudioName ForType:SelectAudioType];
 }
 
--(void)HidDelay:(NSTimeInterval)delay CompletionBlock:(void(^)(BOOL completion))blcok{
+-(void)HidDelay:(NSTimeInterval)delay
+CompletionBlock:(void(^)(BOOL completion))blcok
+{
     ImageView *CancelButton = (ImageView *)[self viewWithTag:11];
     UIView *downView = [CancelButton superview];
     [self setUserInteractionEnabled:false];
@@ -314,11 +318,11 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
         [weak setAlpha:0.0f];
         
     } completion:^(BOOL finished) {
+        [weak removeFromSuperview];
         if (!blcok) {
             return ;
         }
         blcok(finished);
-        [weak removeFromSuperview];
     }];
 }
 
@@ -356,7 +360,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     
 }
 
--(void)playSoundName:(NSString *)name ForType:(NSString *)type
+-(void)playSoundName:(NSString *)name
+             ForType:(NSString *)type
 
 {
     NSString *AudioName = [NSString stringWithFormat:@"%@.%@",name,type];
@@ -397,13 +402,58 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [window addSubview:self];
 }
 
--(UIImage *)GetImgaeSuperView:(UIView *)superView{
+@end
+
+@interface HyGlowLabel : UILabel
+{
+    CGColorSpaceRef colorSpaceRef;
+    CGColorRef glowColorRef;
+}
+@property (nonatomic, assign) CGSize glowOffset;
+@property (nonatomic, assign) CGFloat glowAmount;
+@property (nonatomic, retain) UIColor *glowColor;
+@end
+
+@implementation HyGlowLabel
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if(self != nil) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void)initialize {
+    colorSpaceRef = CGColorSpaceCreateDeviceRGB();
     
-    UIGraphicsBeginImageContextWithOptions(superView.bounds.size, YES, 0.1f);
-    [superView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *uiImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return uiImage;
+    self.glowOffset = CGSizeMake(0.0, 0.0);
+    self.glowAmount = 0.0;
+    self.glowColor = [UIColor clearColor];
+}
+
+- (void)awakeFromNib {
+    [self initialize];
+}
+
+-(void)setGlowColor:(UIColor *)glowColor{
+
+    _glowColor = glowColor;
+    glowColorRef = CGColorCreate(colorSpaceRef, CGColorGetComponents(glowColor.CGColor));
+    
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    CGContextSetShadow(context, self.glowOffset, self.glowAmount);
+    CGContextSetShadowWithColor(context, self.glowOffset, self.glowAmount, glowColorRef);
+    
+    [super drawTextInRect:rect];
+    
+    CGContextRestoreGState(context);
 }
 
 @end
@@ -442,6 +492,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [self setTitle:MenuData.title forState:UIControlStateNormal];
     UIColor *color = [UIColor getPixelColorAtLocation:CGPointMake(50, 20) inImage:image];
     [self setTitleColor:color forState:UIControlStateNormal];
+    
 }
 
 - (void)scaleToSmall
