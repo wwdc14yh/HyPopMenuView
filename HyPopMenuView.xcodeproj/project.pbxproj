@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5CBEDD30FEA89B560C66C5B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4BEAFEAFA15C6A938C955D /* libPods.a */; };
+		7A3C04661BFFF8D5000A5207 /* IMG_3050.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 7A3C04651BFFF8D5000A5207 /* IMG_3050.PNG */; };
 		874A20B41B9F16F3000F591C /* UIColor+ImageGetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */; };
 		876600B21B9FC33200C38233 /* composer_close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B01B9FC33200C38233 /* composer_close.wav */; };
 		876600B31B9FC33200C38233 /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B11B9FC33200C38233 /* composer_open.wav */; };
 		876600B71B9FD9B800C38233 /* composer_select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B61B9FD9B800C38233 /* composer_select.wav */; };
 		876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876600B81B9FE6BC00C38233 /* Untitled.gif */; };
-		876600BB1BA01BD600C38233 /* IMG_3050.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 876600BA1BA01BD600C38233 /* IMG_3050.PNG */; };
 		8776BDD41B9E7178007BC7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD31B9E7178007BC7C0 /* main.m */; };
 		8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD61B9E7178007BC7C0 /* AppDelegate.m */; };
 		8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD91B9E7178007BC7C0 /* ViewController.m */; };
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A3C04651BFFF8D5000A5207 /* IMG_3050.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3050.PNG; sourceTree = "<group>"; };
 		874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGetColor.h"; sourceTree = "<group>"; };
 		874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGetColor.m"; sourceTree = "<group>"; };
 		876600B01B9FC33200C38233 /* composer_close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_close.wav; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		876600B41B9FC70D00C38233 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		876600B61B9FD9B800C38233 /* composer_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_select.wav; sourceTree = "<group>"; };
 		876600B81B9FE6BC00C38233 /* Untitled.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Untitled.gif; path = ../Untitled.gif; sourceTree = "<group>"; };
-		876600BA1BA01BD600C38233 /* IMG_3050.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3050.PNG; sourceTree = "<group>"; };
 		8776BDCE1B9E7178007BC7C0 /* HyPopMenuView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyPopMenuView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDD21B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDD31B9E7178007BC7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				876600B01B9FC33200C38233 /* composer_close.wav */,
 				876600B11B9FC33200C38233 /* composer_open.wav */,
 				876600B61B9FD9B800C38233 /* composer_select.wav */,
-				876600BA1BA01BD600C38233 /* IMG_3050.PNG */,
+				7A3C04651BFFF8D5000A5207 /* IMG_3050.PNG */,
 				8776BDD21B9E7178007BC7C0 /* Info.plist */,
 				8776BDD31B9E7178007BC7C0 /* main.m */,
 			);
@@ -267,8 +267,8 @@
 			files = (
 				876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */,
 				876600B21B9FC33200C38233 /* composer_close.wav in Resources */,
+				7A3C04661BFFF8D5000A5207 /* IMG_3050.PNG in Resources */,
 				876600B31B9FC33200C38233 /* composer_open.wav in Resources */,
-				876600BB1BA01BD600C38233 /* IMG_3050.PNG in Resources */,
 				8776BDDD1B9E7178007BC7C0 /* Main.storyboard in Resources */,
 				8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */,
 				8776BDDF1B9E7178007BC7C0 /* Images.xcassets in Resources */,

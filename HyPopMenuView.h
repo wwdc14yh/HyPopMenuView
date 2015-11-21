@@ -26,21 +26,21 @@ UIKIT_EXTERN NSString *const kHyPopMenuViewSelectAudioTypeKey
 @property (nonatomic,weak) UIView            *TopView;     //自定义的顶部视图   Custom top view
 @property (nonatomic,retain)NSDictionary     *OpenOrCloseAudioDictionary; //音频文件字典     Audio File Dictionary
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
                           TopView:(UIView *)topView
        OpenOrCloseAudioDictionary:(NSDictionary *)openOrCloseAudioDictionary
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
                           TopView:(UIView *)topView
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
            SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
 -(void)SelectdCompletionBlock:(SelectdCompletionBlock)block;
 
--(instancetype) initWithItmes:(NSArray *)Itmes;
+-(instancetype) initWithItmes:(NSArray<MenuLabel *> *)Itmes;
 
 @end
 

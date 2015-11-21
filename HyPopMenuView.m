@@ -45,7 +45,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 
 @implementation HyPopMenuView
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
                           TopView:(UIView *)topView
        OpenOrCloseAudioDictionary:(NSDictionary *)openOrCloseAudioDictionary
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
@@ -56,7 +56,7 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [menu SelectdCompletionBlock:block];
 }
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
                           TopView:(UIView *)topView
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
 
@@ -65,13 +65,13 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [menu SelectdCompletionBlock:block];
 }
 
-+(void)CreatingPopMenuObjectItmes:(NSArray *)Items
++(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
            SelectdCompletionBlock:(SelectdCompletionBlock)block{
     HyPopMenuView *menu = [[HyPopMenuView alloc] initWithItmes:Items];
     [menu SelectdCompletionBlock:block];
 }
 
--(instancetype) initWithItmes:(NSArray *)Itmes
+-(instancetype) initWithItmes:(NSArray<MenuLabel *> *)Itmes
 {
     self = [super init];
     if (self) {
@@ -117,7 +117,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     
     CGFloat CANCELw = 28;
     ImageView *CancelButton = [[ImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(DownView.bounds)/2 - CANCELw/2, CGRectGetHeight(DownView.bounds)/2 - CANCELw/2, CANCELw, CANCELw)];
-    [CancelButton setImage:[UIImage imageNamed:CancelStrImgaeName]];
+    UIImage *image = [UIImage imageNamed:CancelStrImgaeName];
+    [CancelButton setImage:image];
     [CancelButton setTag:11];
     [DownView addSubview:CancelButton];
     [_BlurView addSubview:DownView];
@@ -131,7 +132,6 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     
     typeof(self) weak = self;
     [UIView animateWithDuration:Duration animations:^{
-        weak.backgroundColor = [UIColor colorWithPatternImage:bulrImage];
         [weak setAlpha:1];
         CancelButton.transform=CGAffineTransformMakeRotation((M_PI/2)/2);
     }];
@@ -168,15 +168,16 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
     [button setTitleColor:[UIColor colorWithWhite:0.38 alpha:1] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(selectd:) forControlEvents:UIControlEventTouchUpInside];
     [_BlurView addSubview:button];
+    
     return button;
 }
 
 -(void)StartTheAnimationFromValue:(CGRect)fromValue
                           ToValue:(CGRect)toValue
                             Delay:(CFTimeInterval)delay
-                           Object:(id)obj
+                           Object:(id/*<UIView *>*/)obj
                   CompletionBlock:(void(^) (BOOL CompletionBlock))completionBlock HideDisplay:(BOOL)HideDisplay{
-
+    
     POPSpringAnimation *springAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewFrame];
     springAnimation.removedOnCompletion = YES;
     springAnimation.beginTime = delay;
@@ -251,7 +252,8 @@ NSString *const kHyPopMenuViewSelectAudioTypeKey = @"SelectAudioTypeKey";
 
 -(void)setTopView:(UIView *)TopView{
 
-    if (![TopView isKindOfClass:[NSNull class]]) {
+    if (![TopView isKindOfClass:[NSNull class]] &&
+        [TopView isKindOfClass:[UIView class]]) {
         _TopView = TopView;
         [_BlurView addSubview:_TopView];
     }
@@ -378,11 +380,11 @@ CompletionBlock:(void(^)(BOOL completion))blcok
 }
 
 -(void)removeFromSuperview{
-
     [super removeFromSuperview];
 }
 
--(void)dealloc{
+-(void)dealloc
+{
     NSArray *SubViews = [window subviews];
     for (id obj in SubViews) {
         [obj removeFromSuperview];

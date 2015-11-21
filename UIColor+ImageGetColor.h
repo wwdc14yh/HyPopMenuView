@@ -20,3 +20,10 @@
 + (UIColor*) getPixelColorAtLocation:(CGPoint)point inImage:(UIImage *)image;
 
 @end
+
+
+@interface UIImage (Tint)
+
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
+
+@end
