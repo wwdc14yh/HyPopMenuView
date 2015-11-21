@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MenuLabel.h"
 #import "HyPopMenuView.h"
+#import <POP.h>
 
 @interface ViewController ()
 
@@ -18,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *windows = [UIApplication sharedApplication].windows;
-    NSLog(@"windows.count:%ld",windows.count);
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -56,17 +55,18 @@
     [AudioDictionary setObject:@"wav" forKey:kHyPopMenuViewSelectAudioTypeKey];
     
     
-    [HyPopMenuView CreatingPopMenuObjectItmes:Objs TopView:topView OpenOrCloseAudioDictionary:AudioDictionary SelectdCompletionBlock:^(MenuLabel *menuLabel, NSInteger index) {
+    __weak typeof(self) weak = self;
+    [HyPopMenuView CreatingPopMenuObjectItmes:Objs TopView:topView /*nil*/OpenOrCloseAudioDictionary:AudioDictionary /*nil*/ SelectdCompletionBlock:^(MenuLabel *menuLabel, NSInteger index) {
         NSLog(@"index:%ld ItmeNmae:%@",index,menuLabel.title);
+       // [weak performSegueWithIdentifier:@"ABC" sender:self];
+        UIViewController *VIEW = [self.storyboard instantiateViewControllerWithIdentifier:@"ABC"];
+        VIEW.title = menuLabel.title;
+        if (index%2 == 0) {
+            [weak.navigationController pushViewController:VIEW animated:true];
+        }else{
+            [weak presentViewController:VIEW animated:true completion:nil];
+        }
     }];
-    
-    NSArray *windows = [UIApplication sharedApplication].windows;
-    NSLog(@"HyPopMenuView.count:%ld",windows.count);
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return true;
 }
 
 - (void)didReceiveMemoryWarning {
