@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "tabbar_compose_idea.png"
+      "filename" : "tabbar_compose_idea.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "tabbar_compose_idea@2x.png"
+      "filename" : "tabbar_compose_idea@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "tabbar_compose_idea@3x.png"
+      "filename" : "tabbar_compose_idea@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

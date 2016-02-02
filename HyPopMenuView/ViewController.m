@@ -11,6 +11,8 @@
 #import "HyPopMenuView.h"
 #import <POP.h>
 
+#define Objs @[[MenuLabel CreatelabelIconName:@"tabbar_compose_idea" Title:@"文字"],[MenuLabel CreatelabelIconName:@"tabbar_compose_photo" Title:@"相册"],[MenuLabel CreatelabelIconName:@"tabbar_compose_camera" Title:@"拍摄"],[MenuLabel CreatelabelIconName:@"tabbar_compose_lbs" Title:@"签到"],[MenuLabel CreatelabelIconName:@"tabbar_compose_review" Title:@"点评"],[MenuLabel CreatelabelIconName:@"tabbar_compose_more" Title:@"更多"],]
+
 @interface ViewController ()
 
 @end
@@ -22,16 +24,8 @@
     
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)ShowMenu:(UIButton *)sender {
-    
-    NSArray *Objs = @[
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_idea" Title:@"文字"],
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_photo" Title:@"相册"],
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_camera" Title:@"拍摄"],
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_lbs" Title:@"签到"],
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_review" Title:@"点评"],
-                      [MenuLabel CreatelabelIconName:@"tabbar_compose_more" Title:@"更多"],
-                      ];
+- (IBAction)ShowMenu:(UIButton *)sender
+{
     CGFloat x,y,w,h;
     x = CGRectGetWidth(self.view.bounds)/2 - 213/2;
     y = CGRectGetHeight([UIScreen mainScreen].bounds)/2 * 0.3f;
@@ -54,19 +48,17 @@
     [AudioDictionary setObject:@"composer_select" forKey:kHyPopMenuViewSelectAudioNameKey];
     [AudioDictionary setObject:@"wav" forKey:kHyPopMenuViewSelectAudioTypeKey];
     
-    
-    __weak typeof(self) weak = self;
     [HyPopMenuView CreatingPopMenuObjectItmes:Objs TopView:topView /*nil*/OpenOrCloseAudioDictionary:AudioDictionary /*nil*/ SelectdCompletionBlock:^(MenuLabel *menuLabel, NSInteger index) {
         NSLog(@"index:%ld ItmeNmae:%@",index,menuLabel.title);
-       // [weak performSegueWithIdentifier:@"ABC" sender:self];
-        UIViewController *VIEW = [self.storyboard instantiateViewControllerWithIdentifier:@"ABC"];
-        VIEW.title = menuLabel.title;
-        if (index%2 == 0) {
-            [weak.navigationController pushViewController:VIEW animated:true];
-        }else{
-            [weak presentViewController:VIEW animated:true completion:nil];
-        }
     }];
+}
+
+- (BOOL)prefersStatusBarHidden
+
+{
+    
+    return YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
