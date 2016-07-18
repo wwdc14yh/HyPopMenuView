@@ -88,12 +88,14 @@ static HyPopMenuView* _popMenuObject;
 
     UIButton* disappearButton = [_backgroundView viewWithTag:3];
     if (!disappearButton) {
-        disappearButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        disappearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        disappearButton.adjustsImageWhenHighlighted = NO;
         [_backgroundView addSubview:disappearButton];
         disappearButton.tag = 3;
         _disappearButton = disappearButton;
     }
     [disappearButton setBackgroundImage:[UIImage imageNamed:CancelStrImgaeName] forState:UIControlStateNormal];
+    [disappearButton addTarget:self  action:@selector(closeMenu) forControlEvents:UIControlEventTouchUpInside];
     CGFloat CANCELw = 28;
     disappearButton.bounds = CGRectMake(0, 0, CANCELw, CANCELw);
     disappearButton.center = bottomView.center;
