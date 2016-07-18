@@ -3,16 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "tabbar_compose_background_icon_add.png"
+      "filename" : "IMG_0271.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabbar_compose_background_icon_add@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "IMG_0271@2x.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabbar_compose_background_icon_add@3x.png",
+      "filename" : "IMG_0271@3x.PNG",
       "scale" : "3x"
     }
   ],

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aXv-3Q-Mp4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -51,10 +51,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="324"/>
+            <point key="canvasLocation" x="1653" y="324"/>
+        </scene>
+        <!--Two View Controller-->
+        <scene sceneID="GgA-HY-bPj">
+            <objects>
+                <viewController storyboardIdentifier="two" id="Mwl-U6-CMP" customClass="twoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqu-g8-KcZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wrn-fM-OLr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nLy-cQ-JjJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0271" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-Rt-Jur">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqF-k4-8aq">
+                                <rect key="frame" x="25" y="541" width="96" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="Aed-iY-hoG"/>
+                                    <constraint firstAttribute="height" constant="39" id="JMe-Oz-exf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="Mwl-U6-CMP" eventType="touchUpInside" id="yhb-CL-zqm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni9-oR-VmK">
+                                <rect key="frame" x="20" y="489" width="106" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ill-a0-nQz"/>
+                                    <constraint firstAttribute="width" constant="106" id="n5K-HU-hTV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Open Menu">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openMenu:" destination="Mwl-U6-CMP" eventType="touchUpInside" id="FSQ-Mk-q5B"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dyg-Rt-Jur" firstAttribute="top" secondItem="nLy-cQ-JjJ" secondAttribute="topMargin" id="8al-Si-p8Z"/>
+                            <constraint firstItem="ni9-oR-VmK" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" id="J8p-bS-jqH"/>
+                            <constraint firstItem="wrn-fM-OLr" firstAttribute="top" secondItem="Dyg-Rt-Jur" secondAttribute="bottom" id="LcU-Vk-K43"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dyg-Rt-Jur" secondAttribute="trailing" constant="-20" id="alf-Xr-MDO"/>
+                            <constraint firstItem="AqF-k4-8aq" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="5" id="drz-i2-ptt"/>
+                            <constraint firstItem="AqF-k4-8aq" firstAttribute="top" secondItem="ni9-oR-VmK" secondAttribute="bottom" constant="18" id="eWn-hA-VVh"/>
+                            <constraint firstItem="Dyg-Rt-Jur" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="-20" id="mYb-nn-ivk"/>
+                            <constraint firstItem="wrn-fM-OLr" firstAttribute="top" secondItem="AqF-k4-8aq" secondAttribute="bottom" constant="20" id="pJ0-cU-ebQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="j1w-Xt-Ne5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="nj0-2Q-KqU">
+                            <connections>
+                                <action selector="dismiss:" destination="Mwl-U6-CMP" id="VBf-2m-fUE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dismissButton" destination="AqF-k4-8aq" id="49d-Bb-e8f"/>
+                        <outlet property="openMenuButton" destination="ni9-oR-VmK" id="G2R-hJ-EyA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Se2-ss-RSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2210" y="340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mNN-wp-0Vo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXv-3Q-Mp4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DiM-bV-8Vj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="mOm-sI-0BR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAC-cT-qyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="324"/>
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_0271" width="360" height="640"/>
         <image name="IMG_3050.PNG" width="1242" height="2208"/>
     </resources>
 </document>

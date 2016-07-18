@@ -6,84 +6,124 @@
 //  Copyright (c) 2015年 ouy.Aberi. All rights reserved.
 //
 
+#import "HyPopMenuViewDelegate.h"
+#import "PopMenuButton.h"
+#import "PopMenuModel.h"
 #import <UIKit/UIKit.h>
 
-@class MenuLabel;
+/**
+ *  弹出动画类型
+ *  animation Type
+ */
+typedef NS_ENUM(NSUInteger, HyPopMenuViewAnimationType) {
+    /**
+     *  仿新浪App弹出菜单。
+     *  Sina App fake pop-up menu
+     */
+    HyPopMenuViewAnimationTypeSina,
+    /**
+     *  带有粘性的动画
+     *  Animation with viscous
+     */
+    HyPopMenuViewAnimationTypeViscous,
+    /**
+     *  底部中心点弹出动画
+     *  The bottom of the pop-up animation center
+     */
+    HyPopMenuViewAnimationTypeCenter,
+    
+    /**
+     *  左和右弹出动画
+     *  Left and right pop Anime
+     */
+    HyPopMenuViewAnimationTypeLeftAndRight,
+};
 
-typedef void(^SelectdCompletionBlock)(MenuLabel *menuLabel,NSInteger index);
+typedef enum : NSUInteger {
+    /**
+     *  light模糊背景类型。
+     *  light blurred background type.
+     */
+    HyPopMenuViewBackgroundTypeLightBlur,
 
-UIKIT_EXTERN NSString *const kHyPopMenuViewOpenAudioTypeKey NS_AVAILABLE_IOS(3_0);                //弹出菜单音频类型(后缀名)  Audio Type pop-up menu (extension)
-UIKIT_EXTERN NSString *const kHyPopMenuViewOpenAudioNameKey NS_AVAILABLE_IOS(3_0);                //弹出菜单音频文件名       Audio file name pop-up menu
-UIKIT_EXTERN NSString *const kHyPopMenuViewCloseAudioTypeKey NS_AVAILABLE_IOS(3_0);               //取消菜单音频类型(后缀名)   To cancel the menu audio type (extension)
-UIKIT_EXTERN NSString *const kHyPopMenuViewCloseAudioNameKey NS_AVAILABLE_IOS(3_0);               //取消菜单音频文件名         To cancel the menu audio file name
-UIKIT_EXTERN NSString *const kHyPopMenuViewSelectAudioNameKey
-    NS_AVAILABLE_IOS(3_0);               //选择菜单音频文件名 默认是kHyPopMenuViewCloseAudioNameKey     Select the menu audio file name defaults kHyPopMenuViewCloseAudioNameKey
-UIKIT_EXTERN NSString *const kHyPopMenuViewSelectAudioTypeKey
-    NS_AVAILABLE_IOS(3_0);               //选择菜单音频类型(后缀名) 默认是kHyPopMenuViewCloseAudioTypeKey     Select the menu audio type (extension) The default is kHyPopMenuViewCloseAudioTypeKey
+    /**
+     *  dark模糊背景类型。
+     *  dark blurred background type.
+     */
+    HyPopMenuViewBackgroundTypeDarkBlur,
+
+    /**
+     *  偏白半透明背景类型。
+     *  Partial white translucent background type.
+     */
+    HyPopMenuViewBackgroundTypeLightTranslucent,
+
+    /**
+     *  偏黑半透明背景类型。
+     *  Partial translucent black background type.
+     */
+    HyPopMenuViewBackgroundTypeDarkTranslucent,
+
+    /**
+     *  白~黑渐变色。
+     *  Gradient color.
+     */
+    HyPopMenuViewBackgroundTypeGradient,
+
+} HyPopMenuViewBackgroundType; //背景类型
+//Background type
 
 @interface HyPopMenuView : UIView
-@property (nonatomic,assign,readonly) CGFloat MaxTopViewY; //顶部视图最大Y值   Top View maximum Y value
-@property (nonatomic,weak) UIView            *TopView;     //自定义的顶部视图   Custom top view
-@property (nonatomic,retain)NSDictionary     *OpenOrCloseAudioDictionary; //音频文件字典     Audio File Dictionary
+
+/*=====================================================================================*/
+
+@property (nonatomic, retain) NSArray<PopMenuModel*>* dataSource;
 
 /**
- *  类方法,一句代码弹出PopMenuView
- *
- *  @param Items                      传入MenuLabel的实例数组
- *  @param topView                    顶部View的自定义 (可为nil)
- *  @param openOrCloseAudioDictionary 音频 (可为nil)
- *  @param block                      回调block
- */
-+(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
-                          TopView:(UIView *)topView
-       OpenOrCloseAudioDictionary:(NSDictionary *)openOrCloseAudioDictionary
-           SelectdCompletionBlock:(SelectdCompletionBlock)block;
+ *  背景类型默认为 'HyPopMenuViewBackgroundTypeLightBlur'
+ *  The default is 'HyPopMenuViewBackgroundTypeLightBlur'
+*/
+@property (nonatomic, assign) HyPopMenuViewBackgroundType backgroundType;
 
 /**
- *  类方法,一句代码弹出PopMenuView
- *
- *  @param Items   传入MenuLabel的实例数组
- *  @param topView 顶部View的自定义 (可为nil)
- *  @param block   回调block
+ *  动画类型
+ *  animation Type
  */
-+(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
-                          TopView:(UIView *)topView
-           SelectdCompletionBlock:(SelectdCompletionBlock)block;
+@property (nonatomic, assign) HyPopMenuViewAnimationType animationType;
 
 /**
- *  类方法,一句代码弹出PopMenuView
- *
- *  @param Items 传入MenuLabel的实例数组
- *  @param block 回调block
+ *  自动识别颜色主题，默认为关闭。
+ *  The default is false.
  */
-+(void)CreatingPopMenuObjectItmes:(NSArray<MenuLabel *> *)Items
-           SelectdCompletionBlock:(SelectdCompletionBlock)block;
+@property (nonatomic, assign) BOOL automaticIdentificationColor;
 
 /**
- *  block回调
- *
- *  @param block block
+ *  HyPopMenuViewDelegate
  */
--(void)SelectdCompletionBlock:(SelectdCompletionBlock)block;
-
+@property (nonatomic, assign) id<HyPopMenuViewDelegate> delegate;
 
 /**
- *  对象方法
- *
- *  @param Itmes 传入MenuLabel的实例数组
- *
- *  @return 返回HyPopMenuView对象
+ *  默认为 10.0f         取值范围: 0.0f ~ 20.0f
+ *  default is 10.0f    Range: 0 ~ 20
  */
--(instancetype) initWithItmes:(NSArray<MenuLabel *> *)Itmes;
+@property (nonatomic, assign) CGFloat popMenuSpeed;
+
+/**
+ *  顶部自定义View
+ */
+@property (nonatomic, strong) UIView* topView;
+
++ (instancetype)sharedPopMenuManager;
+
+- (void)openMenu;
+
+- (void)closeMenu;
+
+- (BOOL)isOpenMenu;
 
 @end
 
-@interface CustomButton : UIButton
-@property (nonatomic, retain)MenuLabel *MenuData;
-
--(void)SelectdAnimation;
--(void)CancelAnimation;
-@end
-
-@interface  ImageView: UIImageView
-@end
+UIKIT_EXTERN NSString* const HyPopMenuViewWillShowNotification;
+UIKIT_EXTERN NSString* const HyPopMenuViewDidShowNotification;
+UIKIT_EXTERN NSString* const HyPopMenuViewWillHideNotification;
+UIKIT_EXTERN NSString* const HyPopMenuViewDidHideNotification;

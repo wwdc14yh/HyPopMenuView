@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5CBEDD30FEA89B560C66C5B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4BEAFEAFA15C6A938C955D /* libPods.a */; };
+		7A10FC291D2F7E4A00BCA910 /* PopMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10FC281D2F7E4A00BCA910 /* PopMenuModel.m */; };
+		7A10FC2C1D2F918800BCA910 /* PopMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10FC2B1D2F918800BCA910 /* PopMenuButton.m */; };
 		7A43561C1C607EB9004107EC /* IMG_3050.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 7A43561B1C607EB9004107EC /* IMG_3050.PNG */; };
+		7A462B721CE58CCA0070828E /* twoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A462B711CE58CCA0070828E /* twoViewController.m */; };
+		7A88AD421D3CA5EB00F5F863 /* Untitled1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD411D3CA5EB00F5F863 /* Untitled1.gif */; };
+		7A88AD441D3CA70500F5F863 /* Untitled2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD431D3CA70500F5F863 /* Untitled2.gif */; };
+		7A88AD461D3CA7E000F5F863 /* Untitled3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD451D3CA7E000F5F863 /* Untitled3.gif */; };
+		7A88AD481D3CA8CA00F5F863 /* Untitled4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD471D3CA8CA00F5F863 /* Untitled4.gif */; };
+		7A88AD4A1D3CAA4400F5F863 /* Untitled5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD491D3CAA4400F5F863 /* Untitled5.gif */; };
+		7A88AD4C1D3CAAB400F5F863 /* Untitled6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A88AD4B1D3CAAB400F5F863 /* Untitled6.gif */; };
+		7AA1F6DF1D3897E20022DB9B /* popMenvTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA1F6DE1D3897E20022DB9B /* popMenvTopView.xib */; };
+		7AA1F6E21D3898010022DB9B /* popMenvTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1F6E11D3898010022DB9B /* popMenvTopView.m */; };
 		874A20B41B9F16F3000F591C /* UIColor+ImageGetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */; };
 		876600B21B9FC33200C38233 /* composer_close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B01B9FC33200C38233 /* composer_close.wav */; };
 		876600B31B9FC33200C38233 /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B11B9FC33200C38233 /* composer_open.wav */; };
 		876600B71B9FD9B800C38233 /* composer_select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876600B61B9FD9B800C38233 /* composer_select.wav */; };
-		876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876600B81B9FE6BC00C38233 /* Untitled.gif */; };
 		8776BDD41B9E7178007BC7C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD31B9E7178007BC7C0 /* main.m */; };
 		8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD61B9E7178007BC7C0 /* AppDelegate.m */; };
 		8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDD91B9E7178007BC7C0 /* ViewController.m */; };
@@ -22,7 +32,6 @@
 		8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8776BDE01B9E7178007BC7C0 /* LaunchScreen.xib */; };
 		8776BDEE1B9E7178007BC7C0 /* HyPopMenuViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */; };
 		8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */; };
-		8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8776BE011B9E8519007BC7C0 /* MenuLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +45,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A10FC271D2F7E4A00BCA910 /* PopMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenuModel.h; sourceTree = "<group>"; };
+		7A10FC281D2F7E4A00BCA910 /* PopMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuModel.m; sourceTree = "<group>"; };
+		7A10FC2A1D2F918800BCA910 /* PopMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenuButton.h; sourceTree = "<group>"; };
+		7A10FC2B1D2F918800BCA910 /* PopMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopMenuButton.m; sourceTree = "<group>"; };
 		7A43561B1C607EB9004107EC /* IMG_3050.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3050.PNG; sourceTree = "<group>"; };
+		7A462B701CE58CCA0070828E /* twoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoViewController.h; sourceTree = "<group>"; };
+		7A462B711CE58CCA0070828E /* twoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoViewController.m; sourceTree = "<group>"; };
+		7A88AD411D3CA5EB00F5F863 /* Untitled1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled1.gif; sourceTree = "<group>"; };
+		7A88AD431D3CA70500F5F863 /* Untitled2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled2.gif; sourceTree = "<group>"; };
+		7A88AD451D3CA7E000F5F863 /* Untitled3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled3.gif; sourceTree = "<group>"; };
+		7A88AD471D3CA8CA00F5F863 /* Untitled4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled4.gif; sourceTree = "<group>"; };
+		7A88AD491D3CAA4400F5F863 /* Untitled5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled5.gif; sourceTree = "<group>"; };
+		7A88AD4B1D3CAAB400F5F863 /* Untitled6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Untitled6.gif; sourceTree = "<group>"; };
+		7AA1F6DE1D3897E20022DB9B /* popMenvTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popMenvTopView.xib; sourceTree = "<group>"; };
+		7AA1F6E01D3898010022DB9B /* popMenvTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popMenvTopView.h; sourceTree = "<group>"; };
+		7AA1F6E11D3898010022DB9B /* popMenvTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popMenvTopView.m; sourceTree = "<group>"; };
+		7AC90AFD1D34986E006CAC91 /* HyPopMenuViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyPopMenuViewDelegate.h; sourceTree = "<group>"; };
 		874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ImageGetColor.h"; sourceTree = "<group>"; };
 		874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ImageGetColor.m"; sourceTree = "<group>"; };
 		876600B01B9FC33200C38233 /* composer_close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_close.wav; sourceTree = "<group>"; };
 		876600B11B9FC33200C38233 /* composer_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_open.wav; sourceTree = "<group>"; };
 		876600B41B9FC70D00C38233 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		876600B61B9FD9B800C38233 /* composer_select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = composer_select.wav; sourceTree = "<group>"; };
-		876600B81B9FE6BC00C38233 /* Untitled.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Untitled.gif; path = ../Untitled.gif; sourceTree = "<group>"; };
 		8776BDCE1B9E7178007BC7C0 /* HyPopMenuView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyPopMenuView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8776BDD21B9E7178007BC7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8776BDD31B9E7178007BC7C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,8 +83,6 @@
 		8776BDED1B9E7178007BC7C0 /* HyPopMenuViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuViewTests.m; sourceTree = "<group>"; };
 		8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyPopMenuView.h; sourceTree = "<group>"; };
 		8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyPopMenuView.m; sourceTree = "<group>"; };
-		8776BE001B9E8519007BC7C0 /* MenuLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLabel.h; sourceTree = "<group>"; };
-		8776BE011B9E8519007BC7C0 /* MenuLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLabel.m; sourceTree = "<group>"; };
 		AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD4BEAFEAFA15C6A938C955D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,10 +144,15 @@
 				8776BDD61B9E7178007BC7C0 /* AppDelegate.m */,
 				8776BDD81B9E7178007BC7C0 /* ViewController.h */,
 				8776BDD91B9E7178007BC7C0 /* ViewController.m */,
+				7A462B701CE58CCA0070828E /* twoViewController.h */,
+				7A462B711CE58CCA0070828E /* twoViewController.m */,
 				8776BDDB1B9E7178007BC7C0 /* Main.storyboard */,
 				8776BDDE1B9E7178007BC7C0 /* Images.xcassets */,
 				8776BDE01B9E7178007BC7C0 /* LaunchScreen.xib */,
 				8776BDD11B9E7178007BC7C0 /* Supporting Files */,
+				7AA1F6DE1D3897E20022DB9B /* popMenvTopView.xib */,
+				7AA1F6E01D3898010022DB9B /* popMenvTopView.h */,
+				7AA1F6E11D3898010022DB9B /* popMenvTopView.m */,
 			);
 			path = HyPopMenuView;
 			sourceTree = "<group>";
@@ -133,7 +160,12 @@
 		8776BDD11B9E7178007BC7C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				876600B81B9FE6BC00C38233 /* Untitled.gif */,
+				7A88AD4B1D3CAAB400F5F863 /* Untitled6.gif */,
+				7A88AD491D3CAA4400F5F863 /* Untitled5.gif */,
+				7A88AD471D3CA8CA00F5F863 /* Untitled4.gif */,
+				7A88AD451D3CA7E000F5F863 /* Untitled3.gif */,
+				7A88AD431D3CA70500F5F863 /* Untitled2.gif */,
+				7A88AD411D3CA5EB00F5F863 /* Untitled1.gif */,
 				876600B01B9FC33200C38233 /* composer_close.wav */,
 				876600B11B9FC33200C38233 /* composer_open.wav */,
 				876600B61B9FD9B800C38233 /* composer_select.wav */,
@@ -164,12 +196,15 @@
 		8776BDF91B9E73EC007BC7C0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AC90AFD1D34986E006CAC91 /* HyPopMenuViewDelegate.h */,
 				8776BDFA1B9E7404007BC7C0 /* HyPopMenuView.h */,
 				8776BDFB1B9E7404007BC7C0 /* HyPopMenuView.m */,
+				7A10FC271D2F7E4A00BCA910 /* PopMenuModel.h */,
+				7A10FC281D2F7E4A00BCA910 /* PopMenuModel.m */,
+				7A10FC2A1D2F918800BCA910 /* PopMenuButton.h */,
+				7A10FC2B1D2F918800BCA910 /* PopMenuButton.m */,
 				874A20B21B9F16F3000F591C /* UIColor+ImageGetColor.h */,
 				874A20B31B9F16F3000F591C /* UIColor+ImageGetColor.m */,
-				8776BE001B9E8519007BC7C0 /* MenuLabel.h */,
-				8776BE011B9E8519007BC7C0 /* MenuLabel.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -265,12 +300,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876600B91B9FE6BC00C38233 /* Untitled.gif in Resources */,
+				7A88AD4A1D3CAA4400F5F863 /* Untitled5.gif in Resources */,
 				876600B21B9FC33200C38233 /* composer_close.wav in Resources */,
 				7A43561C1C607EB9004107EC /* IMG_3050.PNG in Resources */,
 				876600B31B9FC33200C38233 /* composer_open.wav in Resources */,
+				7A88AD4C1D3CAAB400F5F863 /* Untitled6.gif in Resources */,
+				7A88AD481D3CA8CA00F5F863 /* Untitled4.gif in Resources */,
+				7A88AD461D3CA7E000F5F863 /* Untitled3.gif in Resources */,
 				8776BDDD1B9E7178007BC7C0 /* Main.storyboard in Resources */,
+				7A88AD441D3CA70500F5F863 /* Untitled2.gif in Resources */,
 				8776BDE21B9E7178007BC7C0 /* LaunchScreen.xib in Resources */,
+				7AA1F6DF1D3897E20022DB9B /* popMenvTopView.xib in Resources */,
+				7A88AD421D3CA5EB00F5F863 /* Untitled1.gif in Resources */,
 				8776BDDF1B9E7178007BC7C0 /* Images.xcassets in Resources */,
 				876600B71B9FD9B800C38233 /* composer_select.wav in Resources */,
 			);
@@ -323,11 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A462B721CE58CCA0070828E /* twoViewController.m in Sources */,
+				7AA1F6E21D3898010022DB9B /* popMenvTopView.m in Sources */,
 				8776BDDA1B9E7178007BC7C0 /* ViewController.m in Sources */,
-				8776BE021B9E8519007BC7C0 /* MenuLabel.m in Sources */,
+				7A10FC2C1D2F918800BCA910 /* PopMenuButton.m in Sources */,
 				8776BDD71B9E7178007BC7C0 /* AppDelegate.m in Sources */,
 				8776BDFC1B9E7404007BC7C0 /* HyPopMenuView.m in Sources */,
 				8776BDD41B9E7178007BC7C0 /* main.m in Sources */,
+				7A10FC291D2F7E4A00BCA910 /* PopMenuModel.m in Sources */,
 				874A20B41B9F16F3000F591C /* UIColor+ImageGetColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
