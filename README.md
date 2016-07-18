@@ -9,23 +9,23 @@
 
 ####示例:  
 1.效果1
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled1.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled1.gif)
 
 2.效果2
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled1.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled2.gif)
 
 3.效果3
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled3.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled3.gif)
 
 4.效果4
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled4.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled4.gif)
 
 ###特性（可选）
 * 多种动画效果，参考示例。
 
 * 转场效果
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled5.gif)
-![image](https://github.com/wwdc14/HyPopMenuView/blob/master/Untitled6.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled5.gif)
+![image](https://github.com/wwdc14/HyPopMenuView/blob/master/HyPopMenuView/Untitled6.gif)
 
 * 两种背景颜色 Light & Dark
 
@@ -86,7 +86,7 @@ _menu = [HyPopMenuView sharedPopMenuManager];
 @property (nonatomic, strong) UIView* topView;
 ```
 
-*公有方法
+##公有方法
 
 初始化方法
 
@@ -109,7 +109,7 @@ _menu = [HyPopMenuView sharedPopMenuManager];
 - (BOOL)isOpenMenu;
 ```
 
-*通知相关
+##通知相关
 
 **相信我不用解释是什么意思了吧**
 
