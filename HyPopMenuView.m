@@ -35,19 +35,15 @@ static HyPopMenuView* _popMenuObject;
 
 + (instancetype)allocWithZone:(struct _NSZone*)zone
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _popMenuObject = [super allocWithZone:zone];
-    });
+
+    _popMenuObject = [super allocWithZone:zone];
+
     return _popMenuObject;
 }
 
 + (instancetype)sharedPopMenuManager
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _popMenuObject = [[self alloc] sharedPopMenuManager];
-    });
+    _popMenuObject = [[self alloc] sharedPopMenuManager];
     return _popMenuObject;
 }
 
@@ -426,15 +422,8 @@ static HyPopMenuView* _popMenuObject;
     }];
     NSUInteger idx = [_dataSource indexOfObject:sender.model];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (weakView.delegate) {
-            if ([weakView.delegate isKindOfClass:[[weakView currentViewController] class]]) {
-                if ([weakView.delegate respondsToSelector:@selector(popMenuView:didSelectItemAtIndex:)]) {
-                    [weakView.delegate popMenuView:weakView didSelectItemAtIndex:idx];
-                }
-            }
-            else {
-                NSLog(@"不在同一个控制器");
-            }
+        if ([weakView.delegate respondsToSelector:@selector(popMenuView:didSelectItemAtIndex:)]) {
+            [weakView.delegate popMenuView:weakView didSelectItemAtIndex:idx];
         }
     });
     [UIView animateWithDuration:0.2 animations:^{

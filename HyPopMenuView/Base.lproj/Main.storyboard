@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aXv-3Q-Mp4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aXv-3Q-Mp4">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,43 +16,38 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3050.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-cT-5g7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3050.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-cT-5g7"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-YH-eMX">
-                                <rect key="frame" x="128" y="512" width="64" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="xUp-O1-P0p"/>
-                                    <constraint firstAttribute="height" constant="56" id="z90-6P-wZ9"/>
+                                    <constraint firstAttribute="height" constant="56" id="WH0-yy-S6a"/>
                                 </constraints>
                                 <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ShowMenu:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ciH-1I-Ggs"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vYf-cT-5g7" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="5UE-MF-RCa"/>
                             <constraint firstAttribute="centerY" secondItem="vYf-cT-5g7" secondAttribute="centerY" id="72q-Ou-sM1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xzp-YH-eMX" secondAttribute="trailing" constant="112" id="LID-Ps-m1S"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xzp-YH-eMX" secondAttribute="bottom" id="EzB-6P-r4h"/>
                             <constraint firstItem="vYf-cT-5g7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NrP-nH-edv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xzp-YH-eMX" secondAttribute="trailing" constant="139" id="TV1-iO-Wk4"/>
                             <constraint firstAttribute="centerX" secondItem="vYf-cT-5g7" secondAttribute="centerX" id="Zp5-HA-TL3"/>
-                            <constraint firstItem="xzp-YH-eMX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="112" id="mFW-1b-cbS"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xzp-YH-eMX" secondAttribute="bottom" id="yaH-Ok-GYo"/>
+                            <constraint firstItem="xzp-YH-eMX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="140" id="jZE-6y-QT1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JkD-UP-FAB"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653" y="324"/>
+            <point key="canvasLocation" x="636" y="433.13343328335833"/>
         </scene>
         <!--Two View Controller-->
         <scene sceneID="GgA-HY-bPj">
@@ -62,52 +58,48 @@
                         <viewControllerLayoutGuide type="bottom" id="wrn-fM-OLr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nLy-cQ-JjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0271" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-Rt-Jur">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0271" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-Rt-Jur"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqF-k4-8aq">
-                                <rect key="frame" x="25" y="541" width="96" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="Aed-iY-hoG"/>
                                     <constraint firstAttribute="height" constant="39" id="JMe-Oz-exf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Dismiss">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismiss:" destination="Mwl-U6-CMP" eventType="touchUpInside" id="yhb-CL-zqm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ni9-oR-VmK">
-                                <rect key="frame" x="20" y="489" width="106" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ill-a0-nQz"/>
                                     <constraint firstAttribute="width" constant="106" id="n5K-HU-hTV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Open Menu">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="openMenu:" destination="Mwl-U6-CMP" eventType="touchUpInside" id="FSQ-Mk-q5B"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dyg-Rt-Jur" firstAttribute="top" secondItem="nLy-cQ-JjJ" secondAttribute="topMargin" id="8al-Si-p8Z"/>
-                            <constraint firstItem="ni9-oR-VmK" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" id="J8p-bS-jqH"/>
+                            <constraint firstItem="ni9-oR-VmK" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="4" id="J8p-bS-jqH"/>
                             <constraint firstItem="wrn-fM-OLr" firstAttribute="top" secondItem="Dyg-Rt-Jur" secondAttribute="bottom" id="LcU-Vk-K43"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dyg-Rt-Jur" secondAttribute="trailing" constant="-20" id="alf-Xr-MDO"/>
-                            <constraint firstItem="AqF-k4-8aq" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="5" id="drz-i2-ptt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dyg-Rt-Jur" secondAttribute="trailing" constant="-16" id="alf-Xr-MDO"/>
+                            <constraint firstItem="AqF-k4-8aq" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="9" id="drz-i2-ptt"/>
                             <constraint firstItem="AqF-k4-8aq" firstAttribute="top" secondItem="ni9-oR-VmK" secondAttribute="bottom" constant="18" id="eWn-hA-VVh"/>
-                            <constraint firstItem="Dyg-Rt-Jur" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="-20" id="mYb-nn-ivk"/>
-                            <constraint firstItem="wrn-fM-OLr" firstAttribute="top" secondItem="AqF-k4-8aq" secondAttribute="bottom" constant="20" id="pJ0-cU-ebQ"/>
+                            <constraint firstItem="Dyg-Rt-Jur" firstAttribute="leading" secondItem="nLy-cQ-JjJ" secondAttribute="leadingMargin" constant="-16" id="mYb-nn-ivk"/>
+                            <constraint firstItem="wrn-fM-OLr" firstAttribute="top" secondItem="AqF-k4-8aq" secondAttribute="bottom" constant="87" id="pJ0-cU-ebQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j1w-Xt-Ne5">
@@ -124,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se2-ss-RSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="340"/>
+            <point key="canvasLocation" x="2208.8000000000002" y="339.58020989505252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mNN-wp-0Vo">
@@ -142,7 +134,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAC-cT-qyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="324"/>
+            <point key="canvasLocation" x="-176" y="434"/>
         </scene>
     </scenes>
     <resources>

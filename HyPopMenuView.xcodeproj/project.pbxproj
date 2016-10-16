@@ -269,6 +269,7 @@
 				TargetAttributes = {
 					8776BDCD1B9E7178007BC7C0 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 4GZ4P57LRH;
 					};
 					8776BDE61B9E7178007BC7C0 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -500,7 +501,9 @@
 			baseConfigurationReference = EC0BEA95EE756C01478891EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4GZ4P57LRH;
 				INFOPLIST_FILE = HyPopMenuView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Hy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,7 +515,9 @@
 			baseConfigurationReference = AA62579FBB20A26C4E42B8CB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4GZ4P57LRH;
 				INFOPLIST_FILE = HyPopMenuView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Hy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
