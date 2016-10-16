@@ -658,9 +658,9 @@ static HyPopMenuView* _popMenuObject;
 
 - (void)addNotificationAtNotificationName:(NSString*)notificationNmae
 {
-    NSNotification* broadcastMessage = [NSNotification notificationWithName:notificationNmae object:nil];
+    //NSNotification* broadcastMessage = [NSNotification notificationWithName:notificationNmae object:nil];
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter postNotification:broadcastMessage];
+    [notificationCenter postNotificationName:notificationNmae object:self];
 }
 
 - (void)setTopView:(UIView*)topView

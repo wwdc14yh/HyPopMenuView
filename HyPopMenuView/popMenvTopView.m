@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *datas;
 @property (nonatomic, assign) NSUInteger idx;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) HyPopMenuView* menu;
 @end
 
 @implementation popMenvTopView
@@ -52,9 +53,9 @@
 
 - (void)HyPopMenuViewWillShowNotification:(NSNotification *)notification
 {
-    HyPopMenuView *pop = [HyPopMenuView sharedPopMenuManager];
-    if (pop.backgroundType == HyPopMenuViewBackgroundTypeDarkBlur ||
-        pop.backgroundType == HyPopMenuViewBackgroundTypeDarkTranslucent) {
+    _menu = [notification object];
+    if (_menu.backgroundType == HyPopMenuViewBackgroundTypeDarkBlur ||
+        _menu.backgroundType == HyPopMenuViewBackgroundTypeDarkTranslucent) {
         self.label1.textColor = lightColor;
         self.label2.textColor = lightColor;
         self.label3.textColor = lightColor;
@@ -84,8 +85,7 @@
 
 - (void)changeImage
 {
-    HyPopMenuView *pop = [HyPopMenuView sharedPopMenuManager];
-    if (![pop isOpenMenu]) return ;
+    if (![_menu isOpenMenu]) return ;
     
     _idx ++;
     if (_idx > 6) {
