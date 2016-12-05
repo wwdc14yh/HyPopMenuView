@@ -53,6 +53,8 @@
     CGFloat buttonViewWidth = MIN(CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds)) / 3;
     buttonViewWidth = buttonViewWidth - 10;
     button.bounds = CGRectMake(0, 0, buttonViewWidth, buttonViewWidth);
+    button.layer.masksToBounds = true;
+    
     _customView = button;
 }
 

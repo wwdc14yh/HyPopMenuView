@@ -11,17 +11,22 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <pop/POP.h>
 
-#define Duration 0.2
+#define Duration 0.5
 #define KeyPath @"transform.scale"
 #define CancelStrImgaeName @"tabbar_compose_background_icon_add"
 #define kW [UIScreen mainScreen].bounds.size.width
 #define kH [UIScreen mainScreen].bounds.size.height
+#define SYSTEM_VERSION_LESS_THAN(v)                                            \
+([[[UIDevice currentDevice] systemVersion] compare:v                         \
+options:NSNumericSearch] ==       \
+NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)                                \
+([[[UIDevice currentDevice] systemVersion] compare:v                         \
+options:NSNumericSearch] !=       \
+NSOrderedDescending)
+@interface HyPopMenuView ()
 
-@interface HyPopMenuView () {
-@private
-    UIWindow* window;
-}
-
+@property (nonatomic, weak) UIView* superView;
 @property (nonatomic, weak) UIView* backgroundView;
 @property (nonatomic, weak) UIButton* disappearButton;
 @property (nonatomic, weak) UIView* bottomView;
@@ -32,6 +37,8 @@
 @implementation HyPopMenuView
 
 static HyPopMenuView* _popMenuObject;
+
+static BOOL isAlpha = false;
 
 + (instancetype)allocWithZone:(struct _NSZone*)zone
 {
@@ -71,6 +78,10 @@ static HyPopMenuView* _popMenuObject;
     if (!bottomView) {
         bottomView = [UIView new];
         [_backgroundView addSubview:bottomView];
+        UIView *superView = [UIView new];
+        superView.frame = _backgroundView.frame;
+        [_backgroundView addSubview:superView];
+        _superView = superView;
         [bottomView setTag:2];
         _bottomView = bottomView;
     }
@@ -100,7 +111,7 @@ static HyPopMenuView* _popMenuObject;
 - (void)openMenu
 {
     [self addNotificationAtNotificationName:HyPopMenuViewWillShowNotification];
-    _delegate = (id)[self currentViewController];
+    //_delegate = (id)[self currentViewController];
     UIView* backgroundView = [self effectsViewWithType:_backgroundType];
     _backgroundView = backgroundView;
     if (_topView) {
@@ -114,6 +125,7 @@ static HyPopMenuView* _popMenuObject;
 
 - (void)closeMenu
 {
+    //UIWindow *window = (id)[self getMainView];
     [self addNotificationAtNotificationName:HyPopMenuViewWillHideNotification];
     __weak HyPopMenuView* weakView = self;
     [self disappearPopMenuViewAnimate];
@@ -124,21 +136,54 @@ static HyPopMenuView* _popMenuObject;
     }];
     double d = (weakView.dataSource.count * 0.04) + 0.3;
     [UIView animateKeyframesWithDuration:Duration delay:d options:0 animations:^{
-        weakView.backgroundView.alpha = 0.0;
+        if (isAlpha) {
+            [weakView.backgroundView setAlpha:0];
+        }else{
+            UIVisualEffectView *effect = (id)_backgroundView;
+            effect.effect = nil;
+            _topView.alpha = 0;
+        }
     }
         completion:^(BOOL finished) {
             [weakView addNotificationAtNotificationName:HyPopMenuViewDidHideNotification];
             [weakView.backgroundView removeFromSuperview];
-            [window setHidden:finished];
             weakView.isOpen = false;
+            [self removeFromSuperview];
         }];
 }
 
 - (void)backgroundAnimate
 {
+    _topView.alpha = 0.0f;
     __weak HyPopMenuView* weakView = self;
+    if ([_backgroundView isKindOfClass:[UIVisualEffectView class]]) {
+        UIVisualEffectView *effect = (id)_backgroundView;
+        effect.effect = nil;
+    }
+    UIBlurEffect* effectBlur = nil;
+    switch (_backgroundType) {
+        case HyPopMenuViewBackgroundTypeDarkBlur:
+            effectBlur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+            break;
+        case HyPopMenuViewBackgroundTypeDarkTranslucent:
+            
+            break;
+        case HyPopMenuViewBackgroundTypeLightBlur:
+            effectBlur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+            break;
+        case HyPopMenuViewBackgroundTypeGradient:
+            break;
+        case HyPopMenuViewBackgroundTypeLightTranslucent:
+            break;
+    }
     [UIView animateWithDuration:Duration animations:^{
-        [weakView.backgroundView setAlpha:1];
+        if (isAlpha) {
+            [weakView.backgroundView setAlpha:1];
+        }else{
+            UIVisualEffectView *effect = (id)_backgroundView;
+            effect.effect = effectBlur;
+            _topView.alpha = 1;
+        }
         weakView.disappearButton.transform = CGAffineTransformMakeRotation((M_PI / 2) / 2);
     }];
     [self showItemAnimate];
@@ -156,7 +201,7 @@ static HyPopMenuView* _popMenuObject;
         model.automaticIdentificationColor = weakView.automaticIdentificationColor;
         [model.customView removeFromSuperview];
         model.customView.alpha = 0.0f;
-        [weakView.backgroundView addSubview:model.customView];
+        [weakView.superView addSubview:model.customView];
 
         CGRect toRect;
         CGRect fromRect;
@@ -354,7 +399,7 @@ static HyPopMenuView* _popMenuObject;
         [_backgroundView removeFromSuperview];
         _backgroundView = nil;
     }
-
+    isAlpha = true;
     UIView* effectView = nil;
     UIBlurEffect* effectBlur = nil;
     CAGradientLayer* gradientLayer = nil;
@@ -378,6 +423,7 @@ static HyPopMenuView* _popMenuObject;
 
     if (effectBlur) {
         effectView = [[UIVisualEffectView alloc] initWithEffect:effectBlur];
+        isAlpha = false;
     }
     else {
         effectView = [UIView new];
@@ -389,8 +435,8 @@ static HyPopMenuView* _popMenuObject;
         }
     }
     effectView.frame = self.bounds;
-    effectView.alpha = 0.0f;
-
+    if (isAlpha) effectView.alpha = 0.0f;
+    _superView.frame = _backgroundView.bounds;
     return effectView;
 }
 
@@ -406,73 +452,102 @@ static HyPopMenuView* _popMenuObject;
 
 - (void)selectedFunc:(PopMenuButton*)sender
 {
+//    sender.layer.cornerRadius = CGRectGetWidth(sender.frame)/2;
+//    sender.backgroundColor = [UIColor redColor];
+    //UIWindow *window = (id)[self getMainView];
     __weak HyPopMenuView* weakView = self;
-    [_dataSource enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
+    for (PopMenuModel *obj in _dataSource) {
         PopMenuModel* model = obj;
         PopMenuButton* button = (id)model.customView;
         if (sender == button) {
             [sender selectdAnimation];
-        }
-        else {
+        }else{
             [button cancelAnimation];
         }
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [model performSelector:@selector(_obj)];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [model performSelector:@selector(_obj)];
         });
-    }];
+    }
+    
     NSUInteger idx = [_dataSource indexOfObject:sender.model];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    if (sender.model.transitionType == PopMenuTransitionTypeCustomizeApi) {
+        sender.block = ^(PopMenuButton *btn){
+            //[self.backgroundView insertSubview:btn atIndex:[self.backgroundView subviews].count];
+            if ([weakView.delegate respondsToSelector:@selector(popMenuView:didSelectItemAtIndex:)]) {
+                [weakView.delegate popMenuView:weakView didSelectItemAtIndex:idx];
+            }
+            [weakView close];
+        };
+    }else{
         if ([weakView.delegate respondsToSelector:@selector(popMenuView:didSelectItemAtIndex:)]) {
             [weakView.delegate popMenuView:weakView didSelectItemAtIndex:idx];
         }
-    });
-    [UIView animateWithDuration:0.2 animations:^{
+        [self close];
+    }
+//    [_dataSource enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
+//        PopMenuModel* model = obj;
+//        PopMenuButton* button = (id)model.customView;
+//        if (sender == button) {
+//            sender.layer.masksToBounds = true;
+//            sender.layer.cornerRadius = CGRectGetWidth(sender.bounds) / 2;
+//            [sender selectdAnimation];
+//        }
+//        else {
+//            [button cancelAnimation];
+//        }
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [model performSelector:@selector(_obj)];
+//        });
+//    }];
+//    NSUInteger idx = [_dataSource indexOfObject:sender.model];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        if ([weakView.delegate respondsToSelector:@selector(popMenuView:didSelectItemAtIndex:)]) {
+//            [weakView.delegate popMenuView:weakView didSelectItemAtIndex:idx];
+//        }
+//    });
+//    [UIView animateWithDuration:0.2 animations:^{
+//        weakView.bottomView.backgroundColor = [UIColor clearColor];
+//        weakView.disappearButton.transform = CGAffineTransformMakeRotation(0);
+//        [weakView.disappearButton setAlpha:0.1f];
+//    }];
+//
+//    [UIView animateKeyframesWithDuration:0.5 delay:0.2f options:0 animations:^{
+//        
+//        if (isAlpha) {
+//            [weakView.backgroundView setAlpha:0];
+//        }else{
+//            UIVisualEffectView *effect = (id)_backgroundView;
+//            effect.effect = nil;
+//            _topView.alpha = 0;
+//        }
+//    }
+//        completion:^(BOOL finished) {
+//
+//            [weakView.backgroundView removeFromSuperview];
+//            [self removeFromSuperview];
+//        }];
+}
+
+- (void)close
+{
+    __weak HyPopMenuView* weakView = self;
+    [UIView animateWithDuration:0.5 delay:0.0 options:0 animations:^{
+        _superView.alpha=0.0;
+        if (isAlpha) {
+            [weakView.backgroundView setAlpha:0];
+        }else{
+            UIVisualEffectView *effect = (id)_backgroundView;
+            effect.effect = nil;
+            _topView.alpha = 0;
+        }
         weakView.bottomView.backgroundColor = [UIColor clearColor];
         weakView.disappearButton.transform = CGAffineTransformMakeRotation(0);
         [weakView.disappearButton setAlpha:0.1f];
+    } completion:^(BOOL finished) {
+        [weakView.backgroundView removeFromSuperview];
+        [self removeFromSuperview];
     }];
-
-    [UIView animateKeyframesWithDuration:0.5 delay:0.2f options:0 animations:^{
-        weakView.backgroundView.alpha = 0.0;
-    }
-        completion:^(BOOL finished) {
-
-            [weakView.backgroundView removeFromSuperview];
-            [window setHidden:finished];
-        }];
-}
-
-- (UIViewController*)appRootViewController
-{
-    UIViewController* appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController* topVC = appRootVC;
-    while (topVC.presentedViewController) {
-        topVC = topVC.presentedViewController;
-    }
-    return topVC;
-}
-
-- (UIViewController*)currentViewController
-{
-    UIViewController* vc = [self appRootViewController];
-    if ([vc isKindOfClass:[UITabBarController class]]) {
-        UITabBarController* tab = (UITabBarController*)vc;
-        if ([tab.selectedViewController isKindOfClass:[UINavigationController class]]) {
-            UINavigationController* nav = (UINavigationController*)tab.selectedViewController;
-            return [nav.viewControllers lastObject];
-        }
-        else {
-            return tab.selectedViewController;
-        }
-    }
-    else if ([vc isKindOfClass:[UINavigationController class]]) {
-        UINavigationController* nav = (UINavigationController*)vc;
-        return [nav.viewControllers lastObject];
-    }
-    else {
-        return vc;
-    }
-    return nil;
 }
 
 - (void)setDataSource:(NSArray*)dataSource
@@ -641,15 +716,31 @@ static HyPopMenuView* _popMenuObject;
 
 - (void)show
 {
+    UIWindow *window = (id)[self getMainView];
     if (!window) {
         window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
-    window.windowLevel = UIWindowLevelAlert;
-    window.backgroundColor = [UIColor clearColor];
-    window.alpha = 1;
-    window.hidden = false;
+//    window.windowLevel = UIWindowLevelAlert;
+//    window.backgroundColor = [UIColor clearColor];
+//    window.alpha = 1;
+//    window.hidden = false;
     [window addSubview:self];
 }
+
+- (UIView *)getMainView {
+    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        if (!window)
+            window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+        return [window subviews].lastObject;
+    } else {
+        UIWindow *window =[[UIApplication sharedApplication] keyWindow];
+        if (window == nil)
+            window = [[[UIApplication sharedApplication] delegate] window];//#14
+        return window;
+    }
+}
+
 
 - (BOOL)isOpenMenu
 {
@@ -669,6 +760,11 @@ static HyPopMenuView* _popMenuObject;
         [_topView removeFromSuperview];
     }
     _topView = topView;
+}
+
+- (void)dealloc
+{
+    
 }
 
 - (void)_obj {}

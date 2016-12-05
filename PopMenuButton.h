@@ -9,9 +9,9 @@
 #import "HyPopMenuView.h"
 #import <UIKit/UIKit.h>
 
-typedef void (^completionAnimation)();
+typedef void (^completionAnimation)( PopMenuButton * _Nonnull );
 
-@interface PopMenuButton : UIButton
+@interface PopMenuButton : UIButton <CAAnimationDelegate>
 
 @property (nonatomic, nonnull, strong) PopMenuModel* model;
 

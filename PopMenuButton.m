@@ -38,6 +38,7 @@ static NSString* animationKey = @"transform.scale";
             forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragEnter];
         [self addTarget:self action:@selector(scaleToDefault)
             forControlEvents:UIControlEventTouchDragExit];
+        self.layer.masksToBounds = true;
     }
     return self;
 }
@@ -118,6 +119,7 @@ static NSString* animationKey = @"transform.scale";
     else {
         self.userInteractionEnabled = false;
         self.layer.cornerRadius = CGRectGetWidth(self.bounds) / 2;
+        NSLog(@"%.2f",CGRectGetWidth(self.bounds) / 2);
         UIImage* image = self.imageView.image;
         UIColor* color = [UIColor getPixelColorAtLocation:CGPointMake(50, 20) inImage:image];
         [self setBackgroundColor:color];
@@ -147,7 +149,7 @@ static NSString* animationKey = @"transform.scale";
 
     CABasicAnimation* scaleAnimation = [CABasicAnimation animationWithKeyPath:animationKey];
     scaleAnimation.delegate = self;
-    scaleAnimation.duration = 0.2;
+    scaleAnimation.duration = 0.3;
     scaleAnimation.repeatCount = 0;
     scaleAnimation.removedOnCompletion = FALSE;
     scaleAnimation.fillMode = kCAFillModeForwards;
@@ -157,9 +159,10 @@ static NSString* animationKey = @"transform.scale";
 
     CABasicAnimation* opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     opacityAnimation.delegate = self;
-    opacityAnimation.duration = 0.2;
+    opacityAnimation.duration = 0.3;
+    opacityAnimation.beginTime = 0;
     opacityAnimation.repeatCount = 0;
-    opacityAnimation.removedOnCompletion = FALSE;
+    opacityAnimation.removedOnCompletion = false;
     opacityAnimation.fillMode = kCAFillModeForwards;
     opacityAnimation.autoreverses = NO;
     opacityAnimation.fromValue = @1;
@@ -177,7 +180,7 @@ static NSString* animationKey = @"transform.scale";
         [self setUserInteractionEnabled:true];
         __weak PopMenuButton* weakButton = self;
         if (weakButton.block) {
-            weakButton.block();
+            weakButton.block(self);
         }
 
         [NSTimer scheduledTimerWithTimeInterval:0.6f target:self selector:@selector(DidStopAnimation) userInfo:nil repeats:nil];
